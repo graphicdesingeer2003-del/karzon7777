@@ -6,3 +6,7 @@
 database
 __pycache__
 *.zip
+
+.env.music
+*.session
+*.session-journal

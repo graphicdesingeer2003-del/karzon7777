@@ -17,3 +17,9 @@ Automatic replies to bot messages remain available. Group inactivity moderation 
 Daily group questions: enabled in the primary group at 19:00 Asia/Yerevan.
 /daily on | off | status | time 20:30 (group admins only).
 30 rotating prompts, one per day; missed windows are skipped. Bot must be running.
+
+YouTube music: /music for help. /song sends MP3; /play plays in voice chat.
+See MUSIC_SETUP.md for the required voice-account setup.
+
+Admin dashboard: /admin or /control. Categorized command reference, group protection, daily questions, music controls, activity and event history.
+Group admins control their current group. The owner/global admin can control PRIMARY_CHAT_ID in private. Language controls are owner-only.
