@@ -1,42 +1,19 @@
-# Karzon Bot — պատրաստ GitHub-ի համար
+Karzon Telegram Bot
 
-Այս փաթեթի `main.py` ֆայլն արդեն ներառում է բոտի ամբողջ կոդը, լեզուները և JSON տվյալները։ `data`, `locales`, `handlers`, `database` պանակներ առանձին վերբեռնելու կարիք չկա։
+Python 3.12+. Install: pip install -r requirements.txt
+Start: python main.py
+Check: python main.py --check
 
-## 1. GitHub
+Set environment variables using .env.example. Never upload your .env or database to GitHub.
+For Railway: deploy this folder with Dockerfile, set BOT_TOKEN and other variables, attach a persistent volume at /data.
+Keep existing database and credentials when updating. Only one bot instance should poll Telegram.
 
-Ստեղծիր նոր **Private repository**։ Բացիր `Karzon_GitHub_READY.zip`-ը և **Add file → Upload files** բաժին քաշիր ներսի բոլոր ֆայլերը։ ZIP-ն ինքը մի վերբեռնիր։ Հաստատիր **Commit changes**։
+All games and virtual gifts are free. /fun shows the creative games menu.
+/battle /emoji /story /choice /mission /gift /couple /joke /bite /toast
+Existing marriages, users and licenses are preserved. Coin rewards, bets and shop commands are disabled.
+Language is Russian by default; only the owner can change it with /language.
+Automatic replies to bot messages remain available. Group inactivity moderation uses /inactive.
 
-Repository-ի գլխավոր էջում պետք է լինեն `main.py`, `requirements.txt`, `Dockerfile` և `README.md`։ Ֆայլերը լրացուցիչ պանակի մեջ մի դիր։ Եթե հին repository-ն ես օգտագործում, անպայման փոխարինիր նաև հին Dockerfile-ը։
-
-## 2. Railway
-
-Միացրու նոր repository-ն։ Variables բաժնում լրացրու՝
-
-```env
-BOT_TOKEN=քո_իրական_token
-OWNER_ID=8358768469
-ADMIN_ID=8358768469
-PRIMARY_CHAT_ID=-1004443792484
-AI_CHAT_ENABLED=false
-DB_PATH=/data/karzoni_bot.db
-```
-
-Եթե բոտի սեփականատիրոջ Telegram ID-ն ուրիշ է, համապատասխանաբար փոխիր OWNER_ID-ն ու ADMIN_ID-ն։
-
-Ավելացրու Volume՝ `/data` հասցեով։ Գործարկման հրամանը՝ `python main.py`։ HTTP port կամ domain պետք չէ։
-
-Կանգնեցրու համակարգչում աշխատող բոտը, ապա սեղմիր Deploy։ Միաժամանակ աշխատեցրու միայն մեկ օրինակ։
-
-## 3. Telegram
-
-Հիմնական խումբը (`PRIMARY_CHAT_ID`) ավտոմատ ակտիվացվում է նոր բազայի դեպքում։ Այլ խումբ ակտիվացնելու համար սեփականատիրոջ հաշվից ուղարկիր `/allowhere`։ Եթե նախկինում հիմնական խմբի լիցենզիան անջատել ես, այն վերականգնելու համար նույնպես ուղարկիր `/allowhere`։ Հին օգտատերերի բազան այս փաթեթում չկա։ Եթե պետք է պահպանել հին Coins-ը և զույգերը, կանգնեցված տեղական բոտի `database/karzoni_bot.db` ֆայլը մասնավոր եղանակով տեղափոխիր սերվերի `/data/karzoni_bot.db` հասցե։
-
-AI զրույցն անջատված է։ Հումորը, անեկդոտները, խաղերն ու ամուսնության խաղը աշխատում են առանց AI-ի։
-
-## Տեղական ստուգում
-
-`python main.py --check` ստուգում է ներկառուցված Python և JSON ֆայլերը՝ առանց Telegram-ին միանալու։
-
-Տեղական գործարկման համար `.env.example`-ը պատճենիր որպես `.env`, լրացրու token-ը և գործարկիր `START_BOT.bat`։
-
-Փաթեթը չի պարունակում իրական token-ներ, API բանալիներ կամ օգտատերերի բազա։ Սովորական տեխնիկական լոգերը նվազեցված են, իսկ իրական սխալները մնում են տեսանելի։
+Daily group questions: enabled in the primary group at 19:00 Asia/Yerevan.
+/daily on | off | status | time 20:30 (group admins only).
+30 rotating prompts, one per day; missed windows are skipped. Bot must be running.

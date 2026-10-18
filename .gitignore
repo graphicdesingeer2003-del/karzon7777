@@ -1,5 +1,8 @@
 .env
+.env.*
+!.env.example
 *.db
 *.db-*
 database/
 __pycache__/
+*.zip
